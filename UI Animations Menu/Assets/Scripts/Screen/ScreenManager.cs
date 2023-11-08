@@ -13,13 +13,23 @@ namespace Screens
 
         private ScreenBase _currentScreen;
 
-       
+        //public Vector3 vec;
 
         private void Start()
         {
+            /*transform.Scale(2);
+            gameObject.Scale(2);*/
+
+
+
             HideAll();
             ShowByType(startScreen);
         }
+
+        /*private void Scale(Transform t, float size)
+        {
+            t.localScale = Vector3.one * size;
+        }*/
 
         public void ShowByType(ScreenType type)
         {
