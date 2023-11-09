@@ -11,6 +11,8 @@ public class CarEditor : Editor
         //base.OnInspectorGUI();
         Car myTarget = (Car)target;
 
+        myTarget.carPrefab = (GameObject)EditorGUILayout.ObjectField(myTarget.carPrefab, typeof(GameObject), true);
+
         myTarget.speed = EditorGUILayout.IntField("Minha Velocidade", myTarget.speed);
         myTarget.gear = EditorGUILayout.IntField("Marcha", myTarget.gear);
 
@@ -22,5 +24,18 @@ public class CarEditor : Editor
         {
             EditorGUILayout.HelpBox("velocidade acima do permitido", MessageType.Error);
         }
+
+        GUI.color = Color.blue;
+
+        if(GUILayout.Button("Create Car"))
+        {
+            myTarget.CreateCar();
+        }
+        GUI.color = Color.yellow;
+        if (GUILayout.Button("Create Car"))
+        {
+            myTarget.CreateCar();
+        }
+
     }
 }
