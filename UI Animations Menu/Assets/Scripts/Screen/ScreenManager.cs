@@ -8,28 +8,30 @@ namespace Screens
     public class ScreenManager : Singleton<ScreenManager>
     {
         public List<ScreenBase> screenBases;
+        public List<GameObject> objs;
 
         public ScreenType startScreen = ScreenType.Painel;
 
         private ScreenBase _currentScreen;
 
-        //public Vector3 vec;
+        //wpublic Vector3 vec;
 
         private void Start()
         {
             /*transform.Scale(2);
             gameObject.Scale(2);*/
+            //screenBases.GetRandom();
 
-
+            objs.GetRandom();
 
             HideAll();
             ShowByType(startScreen);
         }
 
-        /*private void Scale(Transform t, float size)
+        private void GetRandom()
         {
-            t.localScale = Vector3.one * size;
-        }*/
+            Random.Range(0, screenBases.Count);
+        }
 
         public void ShowByType(ScreenType type)
         {
